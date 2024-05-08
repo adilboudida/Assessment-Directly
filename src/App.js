@@ -1,7 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// App.js
+
+import ListingPage from './views/ListingPage';
+import DetailsPage from './views/DetailsPage';
 
 function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ListingPage />} />
+        <Route path="/details/:id" element={<DetailsPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+
+function App1() {
   return (
     <div className="App">
       <header className="App-header">
@@ -22,4 +42,3 @@ function App() {
   );
 }
 
-export default App;
